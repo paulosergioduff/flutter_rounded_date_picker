@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rounded_date_picker/flutter_rounded_date_picker.dart';
-import 'package:flutter_rounded_date_picker/src/material_rounded_date_picker_style.dart';
-import 'package:flutter_rounded_date_picker/src/material_rounded_year_picker_style.dart';
+//import 'package:flutter_rounded_date_picker/src/material_rounded_date_picker_style.dart';
+//import 'package:flutter_rounded_date_picker/src/material_rounded_year_picker_style.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -135,85 +135,117 @@ class _HomeState extends State<Home> {
                   onPressed: () async {
                     DateTime newDateTime = await showRoundedDatePicker(
                       background: Colors.white,
-                        context: context,
-                        theme: ThemeData(primarySwatch: Colors.deepPurple),
-                        era: EraMode.BUDDHIST_YEAR,
-                        styleDatePicker: MaterialRoundedDatePickerStyle(
-                          textStyleDayButton: TextStyle(fontSize: 36, color: Colors.white),
-                          textStyleYearButton: TextStyle(
-                            fontSize: 52,
-                            color: Colors.white,
-                          ),
-                          textStyleDayHeader: TextStyle(
-                            fontSize: 24,
-                            color: Colors.white,
-                          ),
-                          textStyleCurrentDayOnCalendar:
-                              TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
-                          textStyleDayOnCalendar: TextStyle(fontSize: 28, color: Colors.white),
-                          textStyleDayOnCalendarSelected:
-                              TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
-                          textStyleDayOnCalendarDisabled: TextStyle(fontSize: 28, color: Colors.white.withOpacity(0.1)),
-                          textStyleMonthYearHeader:
-                              TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
-                          paddingDatePicker: EdgeInsets.all(0),
-                          paddingMonthHeader: EdgeInsets.all(32),
-                          paddingActionBar: EdgeInsets.all(16),
-                          paddingDateYearHeader: EdgeInsets.all(32),
-                          sizeArrow: 50,
-                          colorArrowNext: Colors.white,
-                          colorArrowPrevious: Colors.white,
-                          marginLeftArrowPrevious: 16,
-                          marginTopArrowPrevious: 16,
-                          marginTopArrowNext: 16,
-                          marginRightArrowNext: 32,
-                          textStyleButtonAction: TextStyle(fontSize: 28, color: Colors.white),
-                          textStyleButtonPositive:
-                              TextStyle(fontSize: 28, color: Colors.white, fontWeight: FontWeight.bold),
-                          textStyleButtonNegative: TextStyle(fontSize: 28, color: Colors.white.withOpacity(0.5)),
-                          decorationDateSelected: BoxDecoration(color: Colors.orange[600], shape: BoxShape.circle),
-                          backgroundPicker: Colors.deepPurple[400],
-                          backgroundActionBar: Colors.deepPurple[300],
-                          backgroundHeaderMonth: Colors.deepPurple[300],
+                      context: context,
+                      theme: ThemeData(primarySwatch: Colors.deepPurple),
+                      era: EraMode.BUDDHIST_YEAR,
+                      styleDatePicker: MaterialRoundedDatePickerStyle(
+                        textStyleDayButton:
+                            TextStyle(fontSize: 36, color: Colors.white),
+                        textStyleYearButton: TextStyle(
+                          fontSize: 52,
+                          color: Colors.white,
                         ),
-                        styleYearPicker: MaterialRoundedYearPickerStyle(
-                          textStyleYear: TextStyle(fontSize: 40, color: Colors.white),
-                          textStyleYearSelected:
-                              TextStyle(fontSize: 56, color: Colors.white, fontWeight: FontWeight.bold),
-                          heightYearRow: 100,
-                          backgroundPicker: Colors.deepPurple[400],
+                        textStyleDayHeader: TextStyle(
+                          fontSize: 24,
+                          color: Colors.white,
                         ),
-                        textActionButton: "ACTION",
-                        onTapActionButton: (){
-                           //
-                        },
-                        textPositiveButton: "OK",
-                        textNegativeButton: "CANCEL",
-                        customWeekDays: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
-                        listDateDisabled: [
-                          DateTime.now().subtract(Duration(days: 2)),
-                          DateTime.now().subtract(Duration(days: 4)),
-                          DateTime.now().subtract(Duration(days: 6)),
-                          DateTime.now().subtract(Duration(days: 8)),
-                          DateTime.now().subtract(Duration(days: 10)),
-                          DateTime.now().add(Duration(days: 2)),
-                          DateTime.now().add(Duration(days: 4)),
-                          DateTime.now().add(Duration(days: 6)),
-                          DateTime.now().add(Duration(days: 8)),
-                          DateTime.now().add(Duration(days: 10)),
-                        ],
-                        onTapDay: (DateTime dateTime, bool available) {
-                          if (!available) {
-                            showDialog(
-                                context: context,
-                                builder: (c) => CupertinoAlertDialog(title: Text("This date cannot be selected."),actions: <Widget>[
-                                  CupertinoDialogAction(child: Text("OK"),onPressed: (){
-                                    Navigator.pop(context);
-                                  },)
-                                ],));
-                          }
-                          return available;
-                        },
+                        textStyleCurrentDayOnCalendar: TextStyle(
+                            fontSize: 32,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                        textStyleDayOnCalendar:
+                            TextStyle(fontSize: 28, color: Colors.white),
+                        textStyleDayOnCalendarSelected: TextStyle(
+                            fontSize: 32,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                        textStyleDayOnCalendarDisabled: TextStyle(
+                            fontSize: 28, color: Colors.white.withOpacity(0.1)),
+                        textStyleMonthYearHeader: TextStyle(
+                            fontSize: 32,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                        paddingDatePicker: EdgeInsets.all(0),
+                        paddingMonthHeader: EdgeInsets.all(32),
+                        paddingActionBar: EdgeInsets.all(16),
+                        paddingDateYearHeader: EdgeInsets.all(32),
+                        sizeArrow: 50,
+                        colorArrowNext: Colors.white,
+                        colorArrowPrevious: Colors.white,
+                        marginLeftArrowPrevious: 16,
+                        marginTopArrowPrevious: 16,
+                        marginTopArrowNext: 16,
+                        marginRightArrowNext: 32,
+                        textStyleButtonAction:
+                            TextStyle(fontSize: 28, color: Colors.white),
+                        textStyleButtonPositive: TextStyle(
+                            fontSize: 28,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                        textStyleButtonNegative: TextStyle(
+                            fontSize: 28, color: Colors.white.withOpacity(0.5)),
+                        decorationDateSelected: BoxDecoration(
+                            color: Colors.orange[600], shape: BoxShape.circle),
+                        backgroundPicker: Colors.deepPurple[400],
+                        backgroundActionBar: Colors.deepPurple[300],
+                        backgroundHeaderMonth: Colors.deepPurple[300],
+                      ),
+                      styleYearPicker: MaterialRoundedYearPickerStyle(
+                        textStyleYear:
+                            TextStyle(fontSize: 40, color: Colors.white),
+                        textStyleYearSelected: TextStyle(
+                            fontSize: 56,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                        heightYearRow: 100,
+                        backgroundPicker: Colors.deepPurple[400],
+                      ),
+                      textActionButton: "ACTION",
+                      onTapActionButton: () {
+                        //
+                      },
+                      textPositiveButton: "OK",
+                      textNegativeButton: "CANCEL",
+                      customWeekDays: [
+                        "SUN",
+                        "MON",
+                        "TUE",
+                        "WED",
+                        "THU",
+                        "FRI",
+                        "SAT"
+                      ],
+                      listDateDisabled: [
+                        DateTime.now().subtract(Duration(days: 2)),
+                        DateTime.now().subtract(Duration(days: 4)),
+                        DateTime.now().subtract(Duration(days: 6)),
+                        DateTime.now().subtract(Duration(days: 8)),
+                        DateTime.now().subtract(Duration(days: 10)),
+                        DateTime.now().add(Duration(days: 2)),
+                        DateTime.now().add(Duration(days: 4)),
+                        DateTime.now().add(Duration(days: 6)),
+                        DateTime.now().add(Duration(days: 8)),
+                        DateTime.now().add(Duration(days: 10)),
+                      ],
+                      onTapDay: (DateTime dateTime, bool available) {
+                        if (!available) {
+                          showDialog(
+                              context: context,
+                              builder: (c) => CupertinoAlertDialog(
+                                    title:
+                                        Text("This date cannot be selected."),
+                                    actions: <Widget>[
+                                      CupertinoDialogAction(
+                                        child: Text("OK"),
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                      )
+                                    ],
+                                  ));
+                        }
+                        return available;
+                      },
 //                        builderDay:
 //                            (DateTime dateTime, bool isCurrentDay, bool isSelected, TextStyle defaultTextStyle) {
 //                          if (isSelected) {
@@ -262,12 +294,13 @@ class _HomeState extends State<Home> {
 //                            ),
 //                          );
 //                        }
-                        );
+                    );
                     if (newDateTime != null) {
                       setState(() => dateTime = newDateTime);
                     }
                   },
-                  label: Text("Rounded Calendar with Custom style (Example on Pixel C)"),
+                  label: Text(
+                      "Rounded Calendar with Custom style (Example on Pixel C)"),
                 ),
                 const SizedBox(height: 12),
                 FloatingActionButton.extended(
@@ -278,7 +311,7 @@ class _HomeState extends State<Home> {
                       initialDate: DateTime.now().subtract(Duration(days: 1)),
                       firstDate: DateTime(DateTime.now().year - 1),
                       lastDate: DateTime(DateTime.now().year + 1),
-                      listDateDisabled:[DateTime.now()],
+                      listDateDisabled: [DateTime.now()],
                       height: 320,
                       borderRadius: 50,
                     );
@@ -459,7 +492,8 @@ class _HomeState extends State<Home> {
                 const SizedBox(height: 12),
                 FloatingActionButton.extended(
                   onPressed: () async {
-                    DateTime newDateTime = await CupertinoRoundedDatePicker.show(
+                    DateTime newDateTime =
+                        await CupertinoRoundedDatePicker.show(
                       context,
                       fontFamily: "Mali",
                     );

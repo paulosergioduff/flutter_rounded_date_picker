@@ -1,6 +1,6 @@
-# flutter_rounded_date_picker_example
+# flutter_rounded_date_picker
 
-Demonstrates how to use the flutter_rounded_date_picker plugin.
+A new Flutter project.
 
 ## Getting Started
 
